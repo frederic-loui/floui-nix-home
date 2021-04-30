@@ -9,6 +9,7 @@ let
     ./alacritty.nix
     ./bash.nix
     ./firefox.nix
+    ./neomutt.nix
   ];
 in {
   inherit imports;
