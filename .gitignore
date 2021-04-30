@@ -1,0 +1,12 @@
+# ignore all
+*
+
+# but nix confiles files
+!*.nix
+
+# and .gitignore
+!.gitignore
+
+# and README.md
+!README.md
+
