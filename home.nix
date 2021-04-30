@@ -36,12 +36,14 @@ in {
 #  };
 
   home.packages = with pkgs; [
-    swaylock
+#    swaylock
+    swaylock-effects
     swayidle
     wl-clipboard
     mako
 #    alacritty
     wofi
+    flashfocus
     dejavu_fonts
     nerdfonts
     mc
