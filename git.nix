@@ -14,7 +14,7 @@
         ci = "commit";
       };
 
-      ignores = [ "!*.nix" "*" ];
+      ignores = [ "*~" "*.swp" ];
     };
   };
 }
