@@ -45,6 +45,7 @@ in {
     nerdfonts
     mc
     ranger
+    killall
   ];
 
   # This value determines the Home Manager release that your

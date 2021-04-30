@@ -6,7 +6,8 @@
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    config.input = { "*" = { xkb_layout = "fr"; }; };
+    config.input = { "*" = { xkb_layout = "fr"; }; 
+                     "2:7:SynPS/2_Synaptics_TouchPad" = { tap = "enabled"; natural_scroll = "enabled";  }; };
     
     config.output = { "*" = { bg = "~/Downloads/kevin-mueller-Y6pJ3aq9f4Q-unsplash.jpg fill"; }; };
     
