@@ -41,8 +41,9 @@ in {
 
   systemd.user.services.flashfocus = {
     Unit = {
-      Description = "Flashfocu";
+      Description = "Flashfocus";
       PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
     };
     Install = {
       WantedBy = [ "graphical-session.target" ];
@@ -67,7 +68,7 @@ in {
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    config.input = { "*" = { xkb_layout = "fr"; }; 
+    config.input = { "*" = { xkb_layout = "fr,us"; }; 
                      "2:7:SynPS/2_Synaptics_TouchPad" = { tap = "enabled"; natural_scroll = "enabled";  }; };
     
     config.output = { "*" = { bg = "~/Downloads/kevin-mueller-Y6pJ3aq9f4Q-unsplash.jpg fill"; }; };
@@ -79,6 +80,10 @@ in {
     config.right = "e";
     config.up = "i";
     config.down = "o";
+
+    config.bars = [{
+        position = "top";
+    }];
 
     config.keybindings = 
       let
@@ -133,6 +138,21 @@ in {
         "${mod}+Shift+c" = "reload";
         "${mod}+Shift+r" = "restart";
         "${mod}+Shift+v" = ''mode "system:  [r]eboot  [p]oweroff  [l]ogout"'';
+
+        # switch workspace next/prev -> right/left
+
+        "ctrl+Alt+Right" = "workspace next_on_output";
+        "ctrl+Alt+Left" = "workspace prev_on_output";
+
+        # Brightness
+        "XF86MonBrightnessDown" = "exec brightnessctl set 2%-";
+        "XF86MonBrightnessUp" = "exec brightnessctl set +2%";
+
+        # Volume
+        "XF86AudioRaiseVolume" = "exec pamixer --increase 5";
+        "XF86AudioLowerVolume" = "exec pamixer --decrease 5";
+        "XF86AudioMute" = "exec pamixer --toggle-mute";
+
       };
   };
 }

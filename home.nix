@@ -36,14 +36,15 @@ in {
 #  };
 
   home.packages = with pkgs; [
-#    swaylock
     swaylock-effects
     swayidle
     wl-clipboard
+    wshowkeys
     mako
-#    alacritty
     wofi
     flashfocus
+    brightnessctl
+    pamixer
     dejavu_fonts
     nerdfonts
     mc
